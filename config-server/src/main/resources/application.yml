@@ -9,6 +9,11 @@ spring:
       server:
         git:
           uri: https://github.com/donggov/spring-config-repository
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 
 management:
   endpoints:
