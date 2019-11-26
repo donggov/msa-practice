@@ -38,3 +38,15 @@ management:
     web:
       exposure:
         include: refresh
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000 # default 1000
+      circuitBreaker:
+        requestVolumeThreshold: 1     # Minimum number of requests in calculate circuit breaker's health. default 20
+        errorThresholdPercentage: 50  # Error percentage to open circuit. default 50
+
