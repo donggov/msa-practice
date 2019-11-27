@@ -7,7 +7,7 @@ Spring Cloud를 활용한 MSA Practice
 2. Spring Cloud Bus
 3. [Hystrix (Circuit Breaker)](https://github.com/donggov/msa-practice/blob/master/docs/Hystrix.md)
 4. [Ribbon](https://github.com/donggov/msa-practice/blob/master/docs/Ribbon.md)
-5. Eureka
+5. [Eureka](https://github.com/donggov/msa-practice/blob/master/docs/Eureka.md)
 6. Feign
 7. API-Gateway
 
