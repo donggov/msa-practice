@@ -21,7 +21,7 @@ public class RestTemplateConfig {
     @LoadBalanced
     public RestTemplate productRestTemplate() {
 //        return restTemplateBuilder.rootUri("http://localhost:9100")
-        return restTemplateBuilder.rootUri("http://product-api")
+        return restTemplateBuilder.rootUri("http://product")
                 .setConnectTimeout(Duration.ofMinutes(3))
                 .build();
     }

@@ -14,7 +14,7 @@ implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
 
 Ribbon 설정
 ````yaml
-product-api:
+product:
   ribbon:
     listOfServers: http://localhost:9100
 ````
@@ -25,7 +25,7 @@ RestTemplate 빈에 `@LoadBalanced` 어노테이션 추가 및 주소를 ribbon 
 @LoadBalanced
 public RestTemplate productRestTemplate() {
     // return restTemplateBuilder.rootUri("http://localhost:9100")
-    return restTemplateBuilder.rootUri("http://product-api")
+    return restTemplateBuilder.rootUri("http://product")
             .setConnectTimeout(Duration.ofMinutes(3))
             .build();
 }

@@ -17,7 +17,7 @@ public class DisplayService {
 
     @HystrixCommand(fallbackMethod = "getProductFallback")
     public String getProduct(long id) {
-        return productRestTemplate.getForObject("http://product-api/products/" + id, String.class);
+        return productRestTemplate.getForObject("http://product/products/" + id, String.class);
     }
 
     public String getProductFallback(long id, Throwable t) {

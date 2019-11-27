@@ -50,8 +50,15 @@ hystrix:
         requestVolumeThreshold: 1     # Minimum number of requests in calculate circuit breaker's health. default 20
         errorThresholdPercentage: 50  # Error percentage to open circuit. default 50
 
-product-api:
+product:
   ribbon:
-    listOfServers: http://localhost:9100,http://localhost:9101
+#    listOfServers: http://localhost:9100,http://localhost:9101
     MaxAutoRetries: 0
     MaxAutoRetriesNextServer: 1 # 실패시 다른 서버로 재시도하는 횟수
+
+eureka:
+  instance:
+    prefer-ip-address: true # OS에서 제공하는 hostname 대신 자신의 ip address를 사용 (local 용)
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
