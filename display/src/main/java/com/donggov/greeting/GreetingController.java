@@ -15,7 +15,7 @@ public class GreetingController {
 
     @Value("${application.env}")
     private String env;
-
+//
     @Value("${greeting}")
     private String greeting;
 
