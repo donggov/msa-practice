@@ -65,5 +65,29 @@ eureka:
 ````
 
 # Hystrix, Ribbon 설정 추가
+Hystrix 설정
+````yaml
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    product:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000 # Ribbon의 각 timeout 보다 커야 정상 동작함
+````
 
- 
+Ribbon 설정
+````yaml
+ product:
+   ribbon:
+     MaxAutoRetriesNextServer: 1
+     ReadTimeout: 3000
+     ConnectTimeout: 1000
+     MaxTotalConnections: 300
+     MaxConnectionsPerHost: 100
+````
