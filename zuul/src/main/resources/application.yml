@@ -1,0 +1,47 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: zuul
+
+zuul:
+  routes:
+    product:
+      path: /products/**
+      serviceId: product
+      stripPrefix: false # false인 경우 uri를 모두 보냄 (/products/{...}), true인 경우 matching된 값을 제외하고 보낸다(/{...})
+    display:
+      path: /display/**
+      serviceId: display
+      stripPrefix: false
+
+eureka:
+  instance:
+    non-secure-port: ${server.port}
+    prefer-ip-address: true # OS에서 제공하는 hostname 대신 자신의 ip address를 사용 (local 용)
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    product:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000 # Ribbon의 각 timeout 보다 커야 정상 동작함
+
+product:
+  ribbon:
+    MaxAutoRetriesNextServer: 1
+    ReadTimeout: 3000
+    ConnectTimeout: 1000
+    MaxTotalConnections: 300
+    MaxConnectionsPerHost: 100

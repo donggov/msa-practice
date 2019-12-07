@@ -9,5 +9,5 @@ Spring Cloud를 활용한 MSA Practice
 4. [Ribbon](https://github.com/donggov/msa-practice/blob/master/docs/Ribbon.md)
 5. [Eureka](https://github.com/donggov/msa-practice/blob/master/docs/Eureka.md)
 6. [Feign](https://github.com/donggov/msa-practice/blob/master/docs/Feign.md)
-7. API-Gateway
+7. [Zuul (API-Gateway)](https://github.com/donggov/msa-practice/blob/master/docs/Zuul.md)
 
